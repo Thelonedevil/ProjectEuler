@@ -1,16 +1,14 @@
 package uk.tldcode.learning
 
-
 class Problem8 {
-
-    fun largestProductInSeries(series: String): Long {
+    fun largestProductInSeries(series: String, length: Int): Long {
         var result = 0L
-        for (i in 0..(999-12)) {
-            var j = series.subSequence(i..(i + 12))
+        for (i in 0..(series.length - length)) {
+            var j = series.subSequence(i..(i + length - 1))
             var k = 1L
             j.forEach { k *= it.toString().toInt() }
-            if(k>result){
-                result=k
+            if (k > result) {
+                result = k
             }
         }
         return result
