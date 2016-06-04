@@ -1,4 +1,4 @@
-package uk.tldcode.learning
+package uk.tldcode.learning.projecteuler.h0.t0
 
 import java.util.*
 
@@ -6,7 +6,7 @@ import java.util.*
 class Problem7 {
 
     fun getNthPrime(n:Int):Int{
-        val arr =  ArrayList<Int>();
+        val arr = ArrayList<Int>();
         arr.add(2);
         arr.add(3);
         var i = 4;

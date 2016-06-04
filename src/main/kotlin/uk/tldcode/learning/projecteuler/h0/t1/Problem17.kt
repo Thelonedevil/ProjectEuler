@@ -1,4 +1,4 @@
-package uk.tldcode.learning
+package uk.tldcode.learning.projecteuler.h0.t1
 
 import java.util.*
 
@@ -78,8 +78,8 @@ class Problem17 {
         }
     }
 
-    fun letterCounts(max: Int): Int {
-        var result = 0
+    fun letterCounts(max: Int): Long {
+        var result = 0L
         for (num in 1..max) {
             result += num.toWords().asSequence().count { !(it.equals(' ') || it.equals('-')) }
         }

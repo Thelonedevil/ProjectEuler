@@ -1,4 +1,4 @@
-package uk.tldcode.learning
+package uk.tldcode.learning.projecteuler.h0.t0
 
 class Problem8 {
     fun largestProductInSeries(series: String, length: Int): Long {

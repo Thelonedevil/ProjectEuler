@@ -1,4 +1,4 @@
-package uk.tldcode.learning
+package uk.tldcode.learning.projecteuler.h0.t0
 
 
 class Problem2 {

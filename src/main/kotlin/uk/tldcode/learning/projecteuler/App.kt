@@ -1,11 +1,16 @@
-package uk.tldcode.learning
+package uk.tldcode.learning.projecteuler
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import uk.tldcode.learning.projecteuler.h0.t0.*
+import uk.tldcode.learning.projecteuler.h0.t1.*
+import uk.tldcode.learning.projecteuler.h0.t2.*
+import uk.tldcode.learning.projecteuler.h0.t3.Problem36
 import java.math.BigDecimal
-
 import java.time.LocalDateTime
+import java.util.*
 
 fun main(args: Array<String>) {
-
     println("Problem 1 = ${Problem1().sum(0, 1000)}")
     println("Problem 2 = ${Problem2().sumEvenFib()}")
     println("Problem 3 = ${Problem3().largestPrimeFactor(600851475143L)}")
@@ -144,17 +149,19 @@ fun main(args: Array<String>) {
                     "53503534226472524250874054075591789781264330331690"
     println("Problem 13 = ${Problem13().largeSum(numStr13.splitToSequence("\n").map { it.toDouble() }.toList().toDoubleArray())}")
     println("Problem 14 = ${Problem14().longestCollatSequence(1000000)}")
-    println("Problem 15 = Unsolved")
     println("Problem 16 = ${Problem16().powerDigitSum(BigDecimal.valueOf(2.0).pow(1000))}")
     println("Problem 17 = ${Problem17().letterCounts(1000)}")
-    println("Problem 18 = Unsolved")
-    println("Problem 19 = ${Problem19().countDay(1901,2000)}")
-    println("Problem 20 = Unsolved")
-    println("Problem 21 = Unsolved")
-    println("Problem 22 = Unsolved")
-    println("Problem 23 = Unsolved")
-    println("Problem 24 = Unsolved")
-    println("Problem 25 = Unsolved")
+    println("Problem 19 = ${Problem19().countDay(1901, 2000)}")
+    println("Problem 20 = ${Problem20().factorialDigitSum(100)}")
+    println("Problem 21 = ${Problem21().sumAmicableNumbers(10000)}")
+    val mapper = ObjectMapper().registerKotlinModule()
+    val file = Problem22().javaClass.classLoader.getResourceAsStream("p022_names.json")
+    var names22 = mapper.readValue(file, ArrayList<String>().javaClass)
+    println("Problem 22 = ${Problem22().scoreNames(names22.toTypedArray())}")
+    println("Problem 24 = ${Problem24().lexographicPermutations(1000000)}")
+    println("Problem 25 = ${Problem25().firstFibByDigits(1000)}")
+    println("Problem 29 = ${Problem29().distinctPowers(100, 100)}")
+    println("Problem 36 = ${Problem36().doubleBasePalindromes()}")
 }
 
 fun println(s: String) {
