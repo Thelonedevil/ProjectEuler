@@ -5,25 +5,25 @@ import java.util.*
 
 class Problem7 {
 
-    fun getNthPrime(n:Int):Int{
-        val arr = ArrayList<Int>();
+    fun getNthPrime(n: Int): Long {
+        val arr = ArrayList<Long>();
         arr.add(2);
         arr.add(3);
-        var i = 4;
-        while(arr.size < n) {
-            if(i % 2 != 0 && i%3 != 0) {
+        var i = 4L;
+        while (arr.size < n) {
+            if (i % 2 != 0L && i % 3 != 0L) {
                 var j = 4;
-                while(j*j <= i) {
-                    if(i % j == 0)
+                while (j * j <= i) {
+                    if (i % j == 0L)
                         break;
-                    j ++;
+                    j++;
                 }
-                if(j*j > i) {
+                if (j * j > i) {
                     arr.add(i);
                 }
             }
             i++;
         }
-        return arr[n-1]
+        return arr[n - 1]
     }
 }

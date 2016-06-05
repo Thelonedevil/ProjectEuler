@@ -15,8 +15,8 @@ class Problem2 {
         }
     }
 
-    fun sumEvenFib(): Int {
-        var value = 0
+    fun sumEvenFib(): Long {
+        var value = 0L
         fib {
             if (it % 2 == 0) {
                 value += it
